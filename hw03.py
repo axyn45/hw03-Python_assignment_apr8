@@ -65,21 +65,21 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
-    # def turns(x,ct):
-    #     for i in range(1,x+1):
-    #         if(i%8==0 or num_eights(i)!=0):
-    #             ct+=1
-    #     return ct
-    # if(n==1):
-    #     return 1
-    # if((turns(n,0))%2==0):
-    #     if(n%8==0 or num_eights(n)!=0):
-    #         return pingpong(n-1)-1
-    #     return pingpong(n-1)+1
-    # else:
-    #     if(n%8==0 or num_eights(n)!=0):
-    #         return pingpong(n-1)+1
-    #     return pingpong(n-1)-1
+    def turns(x,ct):
+        for i in range(1,x+1):
+            if(i%8==0 or num_eights(i)!=0):
+                ct+=1
+        return ct
+    if(n==1):
+        return 1
+    if((turns(n,0))%2==0):
+        if(n%8==0 or num_eights(n)!=0):
+            return pingpong(n-1)-1
+        return pingpong(n-1)+1
+    else:
+        if(n%8==0 or num_eights(n)!=0):
+            return pingpong(n-1)+1
+        return pingpong(n-1)-1
 
     def tool(curr, result, direct):
         if curr == n:
@@ -155,4 +155,4 @@ def count_coins(change):
         with_coin = constrained_count(change - smallest_coin, smallest_coin)
         return without_coin + with_coin
     return constrained_count(change, 1)
-print(count_coins(200))
+# print(count_coins(200))
